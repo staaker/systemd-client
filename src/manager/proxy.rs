@@ -10,6 +10,7 @@ trait SystemdManager {
     fn list_units(&self) -> zbus::Result<Vec<UnitTuple>>;
     fn load_unit(&self, name: &str) -> zbus::Result<zvariant::OwnedObjectPath>;
     fn reload_unit(&self, name: &str, mode: &str) -> zbus::Result<zvariant::OwnedObjectPath>;
+    fn reset_failed_unit(&self, arg_1: &str) -> zbus::Result<()>;
     fn restart_unit(&self, name: &str, mode: &str) -> zbus::Result<zvariant::OwnedObjectPath>;
     fn start_unit(&self, name: &str, mode: &str) -> zbus::Result<zvariant::OwnedObjectPath>;
     fn stop_unit(&self, name: &str, mode: &str) -> zbus::Result<zvariant::OwnedObjectPath>;
